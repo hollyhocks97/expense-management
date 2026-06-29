@@ -9,26 +9,22 @@
     --bg:#f7f6f2; --surface:#fff; --surface2:#f0efe9;
     --text:#1a1a18; --text2:#6b6a65; --text3:#9e9d98;
     --border:rgba(0,0,0,0.08);
-    --green:#2d6a4f; --green-bg:#e8f4ee;
+    --green:#2f767c; --green-bg:#e8f4ee;
     --amber:#92400e; --amber-bg:#fef3c7;
-    --red:#be123c; --red-bg:#ffe4e6;
-    --blue:#1e40af; --blue-bg:#eff6ff;
+    --red:#be123c; --red-bg:#ffede4;
     --r:16px; --rs:10px;
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;min-height:100vh;padding-bottom:88px}
 
-  /* nav */
   .nav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
   .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 0;font-size:10px;color:var(--text3);background:none;border:none;cursor:pointer;transition:color .15s}
   .nav-btn.active{color:var(--green)}
   .nav-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-  /* pages */
   .page{display:none;padding:16px 16px 0}
   .page.active{display:block}
 
-  /* header */
   .page-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
   .page-title{font-size:22px;font-weight:700;letter-spacing:-.5px}
   .month-nav{display:flex;align-items:center;gap:8px}
@@ -36,7 +32,6 @@
   .month-nav button svg{width:16px;height:16px;stroke:var(--text2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .month-label{font-size:14px;font-weight:600;color:var(--text2);min-width:70px;text-align:center}
 
-  /* 残高カード */
   .balance-card{background:var(--green);border-radius:var(--r);padding:22px 20px 18px;color:#fff;margin-bottom:12px}
   .balance-period{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:8px}
   .balance-free-label{font-size:12px;color:rgba(255,255,255,.75);margin-bottom:2px}
@@ -49,24 +44,19 @@
   .progress-fill{height:100%;background:rgba(255,255,255,.8);border-radius:2px;transition:width .6s ease}
   .progress-fill.warn{background:#fde68a}
   .progress-fill.danger{background:#fca5a5}
-
-  /* 固定費バッジ */
   .fixed-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 10px;font-size:11px;color:rgba(255,255,255,.85);margin-top:10px}
 
-  /* サマリーグリッド */
   .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
   .sum-card{background:var(--surface);border-radius:var(--rs);padding:14px}
   .sum-card-label{font-size:11px;color:var(--text3);margin-bottom:4px}
   .sum-card-value{font-size:20px;font-weight:700;letter-spacing:-.5px}
   .sum-card-sub{font-size:11px;color:var(--text3);margin-top:2px}
 
-  /* セクション */
   .section-title{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:10px}
 
-  /* 支出リスト */
   .expense-list{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
   .expense-item{background:var(--surface);border-radius:var(--rs);padding:12px 14px;display:flex;align-items:center;gap:12px}
-  .expense-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--surface2)}
+  .expense-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:var(--surface2)}
   .expense-info{flex:1;min-width:0}
   .expense-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .expense-meta{font-size:11px;color:var(--text3);margin-top:2px}
@@ -74,16 +64,14 @@
   .expense-del{background:none;border:none;cursor:pointer;padding:4px;color:var(--text3);opacity:.5;font-size:16px;line-height:1}
   .expense-del:active{opacity:1;color:var(--red)}
 
-  /* 固定費リスト（ホーム） */
   .fixed-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
   .fixed-item{background:var(--surface);border-radius:var(--rs);padding:12px 14px;display:flex;align-items:center;gap:12px}
-  .fixed-badge-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg)}
+  .fixed-item-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:var(--amber-bg)}
   .fixed-info{flex:1;min-width:0}
   .fixed-name{font-size:14px;font-weight:600}
   .fixed-cat{font-size:11px;color:var(--text3);margin-top:2px}
   .fixed-amount{font-size:15px;font-weight:700;color:var(--amber);flex-shrink:0}
 
-  /* フォーム */
   .card{background:var(--surface);border-radius:var(--r);padding:20px;margin-bottom:16px}
   .form-group{margin-bottom:14px}
   .form-label{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;display:block}
@@ -96,7 +84,6 @@
   .btn:active{opacity:.8}
   .btn:disabled{opacity:.45}
 
-  /* 設定 */
   .settings-block{background:var(--surface);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
   .settings-sec-title{font-size:12px;font-weight:600;color:var(--text3);padding:14px 16px 6px;letter-spacing:.3px}
   .settings-row{padding:13px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
@@ -104,18 +91,25 @@
   .settings-row-label{font-size:14px;font-weight:500}
   .settings-row-value{font-size:14px;color:var(--text2)}
 
-  /* タグ */
+  /* カテゴリタグ */
   .tags-wrap{padding:10px 12px;display:flex;flex-wrap:wrap}
   .tag{display:inline-flex;align-items:center;gap:5px;background:var(--surface2);border-radius:20px;padding:5px 12px;font-size:13px;font-weight:500;margin:3px}
   .tag-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:15px;line-height:1;padding:0 0 0 3px}
-  .tag-add-row{display:flex;gap:8px;padding:8px 12px 12px}
-  .tag-input{flex:1;padding:9px 12px;font-size:14px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:inherit}
-  .tag-input:focus{outline:none;border-color:var(--green)}
-  .tag-btn{padding:9px 16px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap}
 
-  /* 固定費設定リスト */
+  /* カテゴリ追加フォーム */
+  .cat-add-row{padding:8px 12px 12px}
+  .cat-add-inputs{display:flex;gap:8px;margin-bottom:8px}
+  .cat-emoji-input{width:60px;padding:9px 8px;font-size:20px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:inherit;text-align:center}
+  .cat-emoji-input:focus{outline:none;border-color:var(--green)}
+  .cat-name-input{flex:1;padding:9px 12px;font-size:14px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-family:inherit}
+  .cat-name-input:focus{outline:none;border-color:var(--green)}
+  .cat-add-btn{width:100%;padding:9px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
+  .cat-hint{font-size:11px;color:var(--text3);padding:0 12px 8px}
+
+  /* 固定費設定 */
   .fixed-settings-item{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
   .fixed-settings-item:last-child{border-bottom:none}
+  .fixed-settings-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--amber-bg)}
   .fixed-settings-info{flex:1}
   .fixed-settings-name{font-size:14px;font-weight:600}
   .fixed-settings-meta{font-size:11px;color:var(--text3);margin-top:1px}
@@ -123,20 +117,17 @@
   .icon-del{background:none;border:none;cursor:pointer;color:var(--text3);font-size:18px;line-height:1;opacity:.5}
   .icon-del:active{opacity:1;color:var(--red)}
 
-  /* misc */
   .loading{text-align:center;padding:40px;color:var(--text3);font-size:14px}
   .empty{text-align:center;padding:28px 16px;color:var(--text3);font-size:14px}
   .toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:var(--text);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none;z-index:200}
   .toast.show{opacity:1}
-  .pill{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px}
-  .pill-amber{background:var(--amber-bg);color:var(--amber)}
 
   @media(prefers-color-scheme:dark){
     :root{
       --bg:#111110;--surface:#1c1c1a;--surface2:#252523;
       --text:#f5f4f0;--text2:#9e9d98;--text3:#65645f;
       --border:rgba(255,255,255,.08);
-      --green-bg:#0d2b1e;--amber-bg:#2d1f07;--red-bg:#2d0a16;--blue-bg:#0f172a;
+      --green-bg:#0d2b1e;--amber-bg:#2d1f07;--red-bg:#2d0a16;
     }
   }
 </style>
@@ -234,9 +225,13 @@
   <div class="settings-sec-title">カテゴリ</div>
   <div class="settings-block">
     <div class="tags-wrap" id="cat-tags"></div>
-    <div class="tag-add-row">
-      <input class="tag-input" type="text" id="inp-new-cat" placeholder="新しいカテゴリ">
-      <button class="tag-btn" id="btn-add-cat">追加</button>
+    <div class="cat-add-row">
+      <div class="cat-add-inputs">
+        <input class="cat-emoji-input" type="text" id="inp-new-emoji" placeholder="😀" maxlength="2">
+        <input class="cat-name-input" type="text" id="inp-new-cat" placeholder="カテゴリ名">
+      </div>
+      <div class="cat-hint">左に絵文字、右にカテゴリ名を入力してください</div>
+      <button class="cat-add-btn" id="btn-add-cat">追加</button>
     </div>
   </div>
 </div>
@@ -263,9 +258,9 @@
 const GAS = "https://script.google.com/macros/s/AKfycbwJRhpu08pEIeV2BIzhctr7rAq0kB70svkA7lM0sgbtvwUgVSFiGjSmpLkqyUUxpAglKQ/exec";
 
 let currentMonth = cycleKey(new Date());
+// categories: [{emoji, name}, ...]
 let categories = [];
 
-// ---- utils ----
 function cycleKey(d) {
   if (d.getDate() >= 16) return `${d.getFullYear()}/${pad(d.getMonth()+1)}`;
   const p = new Date(d.getFullYear(), d.getMonth()-1, 1);
@@ -283,14 +278,17 @@ function toast(msg) {
   t.textContent = msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'), 2000);
 }
-const EMOJI = {'食費':'🛒','交通費':'🚃','外食':'🍜','日用品':'🧴','娯楽':'🎮','医療':'💊','光熱費':'💡','通信費':'📱','衣類':'👗','住居':'🏠','保険':'🛡️','教育':'📚','その他':'📦'};
-function icon(c){ return EMOJI[c]||'💴'; }
 function daysElapsed(key) {
   const [y,m] = key.split('/').map(Number);
-  return Math.max(1, Math.ceil((new Date()-new Date(y,m-1,16))/(86400000)));
+  return Math.max(1, Math.ceil((new Date()-new Date(y,m-1,16))/86400000));
 }
 
-// ---- API ----
+// カテゴリ名から絵文字を引く
+function emojiFor(catName) {
+  const found = categories.find(c => c.name === catName);
+  return found ? found.emoji : '💴';
+}
+
 async function get(params){ return (await fetch(`${GAS}?${new URLSearchParams(params)}`)).json(); }
 async function post(body){ return (await fetch(GAS,{method:'POST',body:JSON.stringify(body)})).json(); }
 
@@ -337,7 +335,7 @@ async function loadHome() {
     <div class="fixed-list">
       ${fixedList.map(f=>`
         <div class="fixed-item">
-          <div class="fixed-badge-icon">${icon(f.category)}</div>
+          <div class="fixed-item-icon">${emojiFor(f.category)||'🔒'}</div>
           <div class="fixed-info">
             <div class="fixed-name">${f.name}</div>
             <div class="fixed-cat">${f.category||'カテゴリなし'}</div>
@@ -350,7 +348,7 @@ async function loadHome() {
       ${expenses.length===0?'<div class="empty">変動支出がまだありません</div>':
         expenses.slice(0,8).map(e=>`
           <div class="expense-item">
-            <div class="expense-icon">${icon(e.category)}</div>
+            <div class="expense-icon">${emojiFor(e.category)}</div>
             <div class="expense-info">
               <div class="expense-name">${e.memo||e.category||'支出'}</div>
               <div class="expense-meta">${e.date.slice(5).replace('-','/')} ・ ${e.category}</div>
@@ -369,23 +367,33 @@ async function loadHome() {
   });
 }
 
-// ---- カテゴリ ----
+// ---- カテゴリ読み込み ----
 async function loadCategories() {
   const data = await get({action:'getCategories'});
   categories = data.categories||[];
+
   // セレクト更新（支出追加・固定費追加）
   ['inp-cat','inp-fix-cat'].forEach(id=>{
     const sel = document.getElementById(id);
-    if(!sel)return;
-    const def = id==='inp-fix-cat'?'<option value="">なし</option>':'<option value="">選択してください</option>';
-    sel.innerHTML = def + categories.map(c=>`<option value="${c}">${c}</option>`).join('');
+    if(!sel) return;
+    const def = id==='inp-fix-cat'
+      ? '<option value="">なし</option>'
+      : '<option value="">選択してください</option>';
+    sel.innerHTML = def + categories.map(c=>
+      `<option value="${c.name}">${c.emoji} ${c.name}</option>`
+    ).join('');
   });
-  // タグ
+
+  // タグ表示
   const wrap = document.getElementById('cat-tags');
-  if(!wrap)return;
+  if(!wrap) return;
   wrap.innerHTML = categories.length===0
     ? '<div style="padding:8px;font-size:13px;color:var(--text3)">カテゴリがありません</div>'
-    : categories.map(c=>`<span class="tag">${icon(c)} ${c}<button class="tag-del" data-name="${c}">×</button></span>`).join('');
+    : categories.map(c=>`
+        <span class="tag">
+          ${c.emoji} ${c.name}
+          <button class="tag-del" data-name="${c.name}">×</button>
+        </span>`).join('');
   wrap.querySelectorAll('.tag-del').forEach(btn=>{
     btn.addEventListener('click', async()=>{
       if(!confirm(`「${btn.dataset.name}」を削除しますか？`))return;
@@ -400,11 +408,12 @@ async function loadFixedSettings() {
   const data = await get({action:'getFixedCosts'});
   const list = data.fixedCosts||[];
   const wrap = document.getElementById('fixed-list-settings');
-  if(!wrap)return;
+  if(!wrap) return;
   wrap.innerHTML = list.length===0
     ? '<div class="empty" style="padding:16px">固定費が登録されていません</div>'
     : list.map(f=>`
         <div class="fixed-settings-item">
+          <div class="fixed-settings-icon">${emojiFor(f.category)||'🔒'}</div>
           <div class="fixed-settings-info">
             <div class="fixed-settings-name">${f.name}</div>
             <div class="fixed-settings-meta">${f.category||'カテゴリなし'}</div>
@@ -424,9 +433,9 @@ async function loadFixedSettings() {
 // ---- 設定ページ ----
 async function loadSettingsPage() {
   const sum = await get({action:'getSummary',month:currentMonth});
-  document.getElementById('disp-budget').textContent      = yen(sum.budget||0);
-  document.getElementById('disp-fixed-total').textContent = yen(sum.fixedTotal||0);
-  document.getElementById('disp-free-balance').textContent= yen(sum.freeBalance||0);
+  document.getElementById('disp-budget').textContent       = yen(sum.budget||0);
+  document.getElementById('disp-fixed-total').textContent  = yen(sum.fixedTotal||0);
+  document.getElementById('disp-free-balance').textContent = yen(sum.freeBalance||0);
   const [y,m] = currentMonth.split('/');
   document.getElementById('inp-bgt-month').value = `${y}-${m}`;
   loadCategories();
@@ -507,10 +516,12 @@ document.getElementById('btn-add-fixed').addEventListener('click', async()=>{
 
 // ---- カテゴリ追加 ----
 document.getElementById('btn-add-cat').addEventListener('click', async()=>{
+  const emoji=document.getElementById('inp-new-emoji').value.trim();
   const name=document.getElementById('inp-new-cat').value.trim();
-  if(!name)return;
-  const res=await post({action:'addCategory',name});
+  if(!name){toast('カテゴリ名を入力してください');return;}
+  const res=await post({action:'addCategory',emoji,name});
   if(res.error){toast(res.error==='already exists'?'既に存在します':'エラーが発生しました');return;}
+  document.getElementById('inp-new-emoji').value='';
   document.getElementById('inp-new-cat').value='';
   toast('追加しました！'); loadCategories();
 });
